@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.manh.cim"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="8"
+        android:targetSdkVersion="19" />
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+    <uses-permission android:name="android.permission.USE_CREDENTIALS" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+
+    <application
+        android:name="com.manh.cim.CimApplication"
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        <activity
+            android:name="com.manh.cim.MainActivity"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.SEARCHED" />
+            </intent-filter>
+        </activity>
+        <activity android:name="com.manh.cim.SearchedActivity" >
+        </activity>
+        <activity
+            android:name="com.manh.cim.DisplaySearchResultsActivity"
+            android:label="@string/title_activity_display_search_results"
+            android:parentActivityName="com.manh.cim.MainActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.manh.cim.MainActivity" />
+        </activity>
+        <activity
+            android:name="com.manh.cim.DisplayUserActivity"
+            android:label="@string/title_activity_display_user"
+            android:parentActivityName="com.manh.cim.DisplaySearchResultsActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.manh.cim.DisplaySearchResultsActivity" />
+        </activity>
+    </application>
+
+</manifest>
